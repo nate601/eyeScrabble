@@ -1,14 +1,51 @@
 ﻿using System;
+using System.Linq;
 
 namespace eyeScrabble
 {
     public static class Program
     {
         private static char[,] board = new char[7, 7];
+
         public static void Main()
         {
             ReadBoard();
             DisplayBoard();
+            if(CheckBoardValidity())
+            {
+                Console.WriteLine("Board state is valid.");
+            }
+            else
+            {
+                Console.WriteLine("Board state is not valid.");
+            }
+        }
+        /// <summary>
+        /// Check if the board state is valid
+        /// </summary>
+        /// <returns>
+        /// True if the board state is valid, false if the board state is invalid
+        /// </returns>
+        private static bool CheckBoardValidity()
+        {
+            if (board is null)
+            {
+                return false;
+            }
+            int numberOfEmptySquares = 0;
+            foreach (char item in board)
+            {
+                if (item == '*')
+                {
+                    numberOfEmptySquares++;
+                }
+            }
+            if (numberOfEmptySquares != 1)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         /// <summary>
