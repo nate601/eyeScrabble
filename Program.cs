@@ -1,5 +1,4 @@
 ﻿using System;
-using static eyeScrabble.ConsoleUtils;
 
 namespace eyeScrabble
 {
@@ -37,7 +36,7 @@ namespace eyeScrabble
                 char[] curLine;
                 while (true)
                 {
-                    Print($"Line #{x}: ");
+                    Console.Write($"Line #{x}: ");
                     curLine = Console.ReadLine().ToCharArray();
                     if (curLine.Length == 7)
                     {
@@ -52,16 +51,4 @@ namespace eyeScrabble
             }
         }
     }
-    public static class ConsoleUtils
-    {
-        public static void PrintL(object obj)
-        {
-            Console.WriteLine(obj);
-        }
-        public static void Print(object obj)
-        {
-            Console.Write(obj);
-        }
-    }
-
 }
