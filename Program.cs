@@ -16,7 +16,9 @@ namespace eyeScrabble
                 }
             }
         }
-
+        /// <summary>
+        /// Reads the board input state position from the user. 
+        /// </summary>
         private static void ReadBoard()
         {
             for (int x = 0; x < 7; x++)
@@ -36,7 +38,6 @@ namespace eyeScrabble
                 {
                     board[x, i] = curLine[i];
                 }
-
             }
         }
     }
