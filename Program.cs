@@ -9,13 +9,24 @@ namespace eyeScrabble
         public static void Main()
         {
             ReadBoard();
+            DisplayBoard();
+        }
+
+        /// <summary>
+        /// Displays the board matrix
+        /// </summary>
+        private static void DisplayBoard()
+        {
             for (int x = 0; x < 7; x++)
             {
                 for (int y = 0; y < 7; y++)
                 {
+                    Console.Write(board[x, y] + " ");
                 }
+                Console.Write(Environment.NewLine);
             }
         }
+
         /// <summary>
         /// Reads the board input state position from the user. 
         /// </summary>
